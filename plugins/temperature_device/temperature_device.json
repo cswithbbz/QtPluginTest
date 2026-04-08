@@ -1,0 +1,7 @@
+{
+    "name": "Temperature Device Factory",
+    "version": "1.0.0",
+    "devices": [
+        "temperature"
+    ]
+}

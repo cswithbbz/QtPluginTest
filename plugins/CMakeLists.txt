@@ -1,0 +1,2 @@
+add_subdirectory(temperature_device)
+add_subdirectory(pressure_device)
