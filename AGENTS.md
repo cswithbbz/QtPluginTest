@@ -1,7 +1,7 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-This repository is a minimal Qt plugin example for mock Modbus-style devices.
+This repository is a minimal Qt5 plugin example for mock Modbus-style devices.
 
 - `app/`: host application and shared API surface.
 - `app/interfaces/`: shared headers used by the app and plugins, including `ModbusDeviceBase`, `IModbusDeviceFactory`, and device type constants.
@@ -14,14 +14,14 @@ This repository is a minimal Qt plugin example for mock Modbus-style devices.
 When adding a new device, create a new directory under `plugins/` with its own `CMakeLists.txt`, device class, factory class, and JSON metadata file.
 
 ## Build, Test, and Development Commands
-- `cmake -S . -B build -DCMAKE_PREFIX_PATH=/path/to/Qt/6.x.x/gcc_64`: configure the project.
+- `cmake -S . -B build -DCMAKE_PREFIX_PATH=/path/to/Qt/5.x.x/gcc_64`: configure the project.
 - `cmake --build build`: build the app and plugins.
 - `./build/app/plugin_demo`: run the host app and load plugins from `build/app/plugins`.
 
-If Qt 6 is not discoverable, set `CMAKE_PREFIX_PATH` or `Qt6_DIR` to the correct Qt installation.
+If Qt5 is not discoverable, set `CMAKE_PREFIX_PATH` or `Qt5_DIR` to the correct Qt installation.
 
 ## Coding Style & Naming Conventions
-- Use C++17 and Qt 6 APIs.
+- Use C++17 and Qt5 APIs.
 - Use 4-space indentation and keep braces on their own lines for class and function definitions.
 - Class names use `PascalCase`, for example `TemperatureDeviceFactory`.
 - File names follow the current pattern: `temperaturedevice.h`, `temperaturedevicefactory.cpp`.

@@ -1,9 +1,10 @@
-find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt5 REQUIRED COMPONENTS Core)
 
-qt_add_plugin(temperature_device
-    CLASS_NAME TemperatureDeviceFactory
+add_library(temperature_device MODULE
     temperaturedevice.cpp
     temperaturedevicefactory.cpp
+    temperaturedevice.h
+    temperaturedevicefactory.h
 )
 
 target_include_directories(temperature_device PRIVATE
@@ -11,7 +12,7 @@ target_include_directories(temperature_device PRIVATE
 )
 
 target_link_libraries(temperature_device PRIVATE
-    Qt6::Core
+    Qt5::Core
     app_device_api
 )
 

@@ -1,16 +1,17 @@
-find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt5 REQUIRED COMPONENTS Core)
 
 add_library(app_device_api STATIC
     base/modbusdevicebase.cpp
+    interfaces/modbusdevicebase.h
 )
 
 target_include_directories(app_device_api PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces
 )
 
-target_link_libraries(app_device_api PUBLIC Qt6::Core)
+target_link_libraries(app_device_api PUBLIC Qt5::Core)
 
-qt_add_executable(plugin_demo
+add_executable(plugin_demo
     main.cpp
 )
 
@@ -23,6 +24,6 @@ target_include_directories(plugin_demo PRIVATE
 )
 
 target_link_libraries(plugin_demo PRIVATE
-    Qt6::Core
+    Qt5::Core
     app_device_api
 )

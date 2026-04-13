@@ -1,9 +1,10 @@
-find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt5 REQUIRED COMPONENTS Core)
 
-qt_add_plugin(pressure_device
-    CLASS_NAME PressureDeviceFactory
+add_library(pressure_device MODULE
     pressuredevice.cpp
     pressuredevicefactory.cpp
+    pressuredevice.h
+    pressuredevicefactory.h
 )
 
 target_include_directories(pressure_device PRIVATE
@@ -11,7 +12,7 @@ target_include_directories(pressure_device PRIVATE
 )
 
 target_link_libraries(pressure_device PRIVATE
-    Qt6::Core
+    Qt5::Core
     app_device_api
 )
 
