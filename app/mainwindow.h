@@ -16,6 +16,9 @@ public:
     ~MainWindow() override;
 
 private slots:
+    void on_btnClear_clicked();
+
+private slots:
     void onLoadPluginsClicked();
 
 private:

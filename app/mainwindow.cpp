@@ -64,7 +64,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::onLoadPluginsClicked()
 {
-    ui->outputTextBrowser->clear();
+    //ui->outputTextBrowser->clear();
     qInfo() << QStringLiteral("=== Starting Plugin Load ===");
 
     const QDir pluginDir(QCoreApplication::applicationDirPath() + QStringLiteral("/plugins"));
@@ -122,4 +122,9 @@ void MainWindow::onLoadPluginsClicked()
     }
 
     qInfo() << QStringLiteral("=== Plugin Load Complete ===");
+}
+
+void MainWindow::on_btnClear_clicked()
+{
+    ui->outputTextBrowser->clear();
 }
